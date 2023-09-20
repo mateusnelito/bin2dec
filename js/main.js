@@ -1,17 +1,19 @@
 function mainScript() {
   const binInput = document.querySelector("#bin-input");
   const decimalOutput = document.querySelector("#decimal");
+  const error = document.querySelector("#error");
 
-  binInput.addEventListener("input", (e) => {
+  binInput.addEventListener("input", () => {
     const bin = binInput.value;
     const binReg = /^[0-1]{1,}$/g;
     if (binReg.test(bin)) {
       decimalOutput.value = bin2dec(bin);
+      error.classList.remove("show");
     } else if (bin === "") {
       decimalOutput.value = "";
       return;
     } else {
-      console.log("Binário inválido!");
+      error.classList.add("show");
       decimalOutput.value = "";
     }
   });

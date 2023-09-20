@@ -1,14 +1,84 @@
-*{
-    position: relative;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+* {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+:root {
+  --min-px: 5px;
+  --default-px: 10px;
+  --max-px: 20px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+#container {
+  background-color: #fafafa;
+  border-radius: var(--default-px);
+  width: 400px;
+  box-shadow: 0 2px var(--min-px) rgba(0, 0, 0, 0.3);
+}
+
+#header {
+  background-color: #eee;
+  border-top-left-radius: var(--default-px);
+  border-top-right-radius: var(--default-px);
+  padding: var(--default-px);
+}
+
+#header h2 {
+  padding: var(--default-px);
+}
+
+#form {
+  padding: var(--max-px);
+}
+
+.form-control {
+  margin-bottom: var(--default-px);
+  padding-bottom: var(--max-px);
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: var(--min-px);
+}
+
+.form-control input {
+  display: inline-block;
+  width: 88%;
+  font-size: 14px;
+  padding: var(--default-px);
+  border: 2px solid #f0f0f0;
+  border-radius: var(--min-px);
+}
+
+.form-control button {
+  font-size: 14px;
+  border: 2px solid #c9c9c9;
+  border-radius: var(--min-px);
+  padding: var(--default-px);
+}
+
+small {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #e74c3c;
+  text-indent: var(--min-px);
+  visibility: hidden;
+}
+
+small.show {
+  visibility: visible;
 }
